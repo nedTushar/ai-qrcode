@@ -34,6 +34,7 @@ function UserProfileDropdown(getUser) {
   const menuItems = ["Account", "Credit", "Support"];
 
   // TODO Implemet Logout Function
+  const handleLogout = () => {};
   // TODO Implement Credit Funtionallity
 
   return (
@@ -57,7 +58,7 @@ function UserProfileDropdown(getUser) {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {menuItems.map((menuItem, index) => (
               <Menu.Item key={index}>
@@ -78,6 +79,7 @@ function UserProfileDropdown(getUser) {
                 {({ active }) => (
                   <button
                     type="button"
+                    onClick={handleLogout}
                     className={`${
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700"
                     } block w-full px-4 py-2 text-center text-sm`}

@@ -9,7 +9,6 @@ const cors = require("cors");
 require("./passport");
 require("./db/db.js");
 
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -29,6 +28,7 @@ app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 // Routes
 const routes = require("./routes/index");
 app.use("/", routes);
+app.get("/", (req, res) => res.send("Server Is Running..."));
 
 // Start the Server
 app.listen(PORT, () =>
